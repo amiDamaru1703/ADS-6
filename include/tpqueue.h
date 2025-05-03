@@ -6,15 +6,15 @@
 
 template<typename T>
 class TPQueue {
-private:
+ private:
     struct Node {
         T data;
         Node* next;
-        Node(const T& data) : data(data), next(nullptr) {}
+        explicit Node(const T& data) : data(data), next(nullptr) {}
     };
     Node* head;
 
-public:
+ public:
     TPQueue() : head(nullptr) {}
     ~TPQueue();
 
@@ -60,7 +60,7 @@ T TPQueue<T>::pop() {
     head = head->next;
     delete temp;
     return data;
-};
+}
 
 struct SYM {
   char ch;
